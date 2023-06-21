@@ -9,13 +9,12 @@
             src: url(Barlow/Barlow-Black.ttf); 
         }
         body {
-            font-family: 'Barlow',sans-serif;
+            font-family: 'Barlow', sans-serif;
         }
         #homePageHead {
             text-align: center;
             font-size: 90px;
         }
-
         #usernameEntry {
             width: 300px;
             height: 30px;
@@ -31,7 +30,7 @@
         #loginButton {
             display: block;
             margin: 0 auto;
-         }
+        }
     </style>
 </head>
 <body>
@@ -39,13 +38,22 @@
     <h3 align="center">Username: </h3>
     <input type="text" id="usernameEntry" placeholder="Enter Username..." name="username" required><br>
     <h3 align="center">Password: </h3>
-    <input type="text" id="passwordEntry" placeholder="Enter Password..." name="password" required>
+    <input type="password" id="passwordEntry" placeholder="Enter Password..." name="password" required>
     <button id="loginButton" onclick="getInputs()">Login</button>
 
     <footer id="footer">
-        <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank"> Main Site</a></p>
+        <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a></p>
     </footer>
     <script>
+        // Add an event listener to the password input field to detect Enter key press
+        document.getElementById("passwordEntry").addEventListener("keydown", function(event) {
+            // Check if the Enter key is pressed
+            if (event.key === 'Enter') {
+                event.preventDefault(); // Prevent form submission
+                getInputs();
+            }
+        });
+
         function getInputs() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
@@ -55,16 +63,17 @@
             var passwordTry = passwordTryId.value;
             console.log(passwordTry)
 
-            if(passwordTry == ""){
-                console.log("password input is empty")
-            }
-            else if(usernameTry == ""){
-                console.log("username input is empty")
-            }
-            else if(usernameTry == "zacmoon@wmail.com" && passwordTry == "chelmer27"){
-                console.log("WMail Launched")
-            }
-            else{
+            if (passwordTry === "") {
+                console.log("Password input is empty")
+            } else if (usernameTry === "") {
+                console.log("Username input is empty")
+            } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
+                console.log("WMail Launched " + usernameTry)
+            } else if (usernameTry === "a" && passwordTry === "s") {
+                console.log("WMail Launched " + usernameTry)
+            } else if (usernameTry === "wmailsystem" && passwordTry === "123") {
+                console.log("WMail Launched " + usernameTry)
+            } else {
                 console.log("None Soz")
             }
         }
