@@ -37,13 +37,13 @@
     <h1 id="homePageHead"><b><u>ZMAIL WEB</u></b></h1>
     <h3 align="center">Username: </h3>
     <input type="text" id="usernameEntry" placeholder="Enter Username..." name="username" required><br>
-    <h3 align ="center">Password: </h3>
+    <h3 align="center">Password: </h3>
     <input type="text" id="passwordEntry" placeholder="Enter Password..." name="password" required>
     <button id="loginButton" onclick="getValue()">Login</button>
     <script>
         function getValue() {
-            var usernameTryId = document.getElementById("usernameTry");
-            var usernameTry = usernmameTryId.value;
+            var usernameTryId = document.getElementById("usernameEntry");
+            var usernameTry = usernameTryId.value;
             console.log(usernameTry);
         }
     </script>
