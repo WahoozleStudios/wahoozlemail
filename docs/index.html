@@ -55,31 +55,41 @@
             console.log(passwordTry)
 
             if (passwordTry === "") {
-                console.log("Password input is empty")
+                console.log("Password input is empty");
             } else if (usernameTry === "") {
-                console.log("Username input is empty")
+                console.log("Username input is empty");
 
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
-                console.log("WMail Launched " + usernameTry)
+                console.log("WMail Launched " + usernameTry);
                 window.location.href = "client.html";
                 localStorage.setItem('usernameTry','zacmoon@wmail.com');
 
             } else if (usernameTry === "a" && passwordTry === "s") {
-                console.log("WMail Launched " + usernameTry)
+                console.log("WMail Launched " + usernameTry);
                 window.location.href = "client.html";
-                localStorage.setItem('usernameTry','quickaccess')
+                localStorage.setItem('usernameTry','quickaccess');
 
             } else if (usernameTry === "wmailsystem" && passwordTry === "123") {
-                console.log("WMail Launched " + usernameTry)
+                console.log("WMail Launched " + usernameTry);
                 window.location.href = "client.html";
-                localStorage.setItem('usernameTry','zmailsystem')
+                localStorage.setItem('usernameTry','zmailsystem');
 
             } else if (usernameTry == "cleomoon@wmail.com" && passwordTry == "nopass"){
-                console.log("WMail Launched "+usernameTry)
-                window.location.href = "client.html"
-                localStorage.setItem('usernameTry','cleomoon@wmail.com')
+                console.log("WMail Launched "+usernameTry);
+                window.location.href = "client.html";
+                localStorage.setItem('usernameTry','cleomoon@wmail.com');
+
+            } else if(usernameTry=="lulumoon@wmail.com"&&passwordTry=="nopass"){
+                console.log("WMail Launched "+usernameTry);
+                window.location.href="client.html";
+                localStorage.setItem('usernameTry','lulumoon@wmail.com');
+            } else if(usernameTry == "oscarpicken@wmail.com"&& passwordTry=="nopass"){
+                console.log("WMail Launched "+usernameTry);
+                window.location.href = "client.html";
+                localStorage.setItem('usernameTry','oscarpicken@wmail.com');
+            
             } else {
-                console.log("Username or Password Not Found")
+                console.log("Username or Password Not Found");
             }
         }
     </script>
