@@ -14,7 +14,7 @@
         h1 {
             font-size: 60px;
         }
-        #button1 {
+        #readButton {
             background-color: blue;
             color: white;
             padding: 60px 120px;
@@ -22,7 +22,7 @@
             border-radius: 4px;
             font-size: 16px;
         }
-        #button2 {
+        #sendButton {
             background-color: blue;
             color: white;
             padding: 60px 120px;
@@ -30,22 +30,44 @@
             border-radius: 4px;
             font-size: 16px;
         }
-        #button3 {
+        #helpButton {
             background-color: blue;
             color: white;
             padding: 60px 120px;
             border: none;
+            <!DOCTYPE html>
+<html>
+<head>
+    <title>Client | Wahoozle Mail</title>
+    <link rel="icon" type="image/x-icon" href="imgs/favicon.ico">
+    <style>
+        @font-face {
+            font-family: "Barlow"; 
+            src: url(Barlow/Barlow-Black.ttf); 
+        }
+        body {
+            font-family: 'Barlow', sans-serif;
+        }
+        h1 {
+            font-size: 60px;
+        }
+        #readButton, #sendButton, #helpButton {
+            background-color: blue;
+            color: white;
+            padding: 20px 40px;
+            border: none;
             border-radius: 4px;
             font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <h1 align="center"><b>WAHOOZLE MAIL CLIENT</b></h1>
     <div id="buttons">
-        <button id ="button1">READ</button>
-        <button id="button2">SEND</button>
-        <button id="button3">HELP</button>
+        <button id="readButton">READ</button>
+        <button id="sendButton">SEND</button>
+        <button id="helpButton">HELP</button>
     </div>
     <script>
         var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
@@ -54,6 +76,28 @@
             console.log("This is a mobile device.");
             window.location.href = "error.html";
         }
+
+        function readFunc() {
+            console.log("Read Button");
+        }
+        
+        function sendFunc() {
+            console.log("Send Button");
+        }
+        
+        function helpFunc() {
+            console.log("Help Button");
+            window.location.href = "help.html";
+        }
+
+        var readButtonId = document.getElementById("readButton");
+        readButtonId.onclick = readFunc;
+
+        var sendButtonId = document.getElementById("sendButton");
+        sendButtonId.onclick = sendFunc;
+
+        var helpButtonId = document.getElementById("helpButton");
+        helpButtonId.onclick = helpFunc;
     </script>
 </body>
 </html>
