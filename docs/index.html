@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ZMAIL- WEB</title>
+    <title>Login | Wahoozle Mail</title>
     <style>
         @font-face {
             font-family: "Barlow"; 
@@ -34,14 +34,15 @@
     </style>
 </head>
 <body>
-    <h1 id="homePageHead"><b><u>ZMAIL WEB</u></b></h1>
+    <h1 id="homePageHead"><b><u>Wahoozle Mail</u></b></h1>
     <h3 align="center">Username: </h3>
     <input type="text" id="usernameEntry" placeholder="Enter Username..." name="username" required><br>
     <h3 align="center">Password: </h3>
     <input type="text" id="passwordEntry" placeholder="Enter Password..." name="password" required>
-    <button id="loginButton" onclick="getValue()">Login</button>
+    <button id="loginButton" onclick="getInputs()">Login</button>
+
     <script>
-        function getValue() {
+        function getINputs() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
             console.log(usernameTry);
