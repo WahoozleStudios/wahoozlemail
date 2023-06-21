@@ -74,6 +74,10 @@
                 window.location.href = "client.html";
                 localStorage.setItem('usernameTry','zmailsystem')
 
+            } else if (usernameTry == "cleomoon@wmail.com" && passwordTry == "nopass"){
+                console.log("WMail Launched "+usernameTry)
+                window.location.href = "client.html"
+                localStorage.setItem('usernameTry','cleomoon@wmail.com')
             } else {
                 console.log("Username or Password Not Found")
             }
