@@ -62,14 +62,17 @@
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+                localStorage.setItem('usernameTry','zacmoon@wmail.com');
 
             } else if (usernameTry === "a" && passwordTry === "s") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+                localStorage.setItem('usernameTry','quickaccess')
 
             } else if (usernameTry === "wmailsystem" && passwordTry === "123") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+                localStorage.setItem('usernameTry','zmailsystem')
 
             } else {
                 console.log("Username or Password Not Found")
