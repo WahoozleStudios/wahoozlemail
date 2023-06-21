@@ -3,11 +3,20 @@
 <head>
     <title>ZMAIL- WEB</title>
     <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
         #homePageHead {
             text-align: center;
         }
 
-        #myInput {
+        #usernameEntry {
+            width: 300px;
+            height: 30px;
+            margin: 0 auto;
+            display: block;
+        }
+        #passwordEntry {
             width: 300px;
             height: 30px;
             margin: 0 auto;
@@ -17,6 +26,12 @@
 </head>
 <body>
     <h1 id="homePageHead"><b><u>ZMAIL WEB</u></b></h1>
-    <input type="text" id="myInput" placeholder="Enter your name" name="name" required>
+    <h3 align="center">Username: </h3>
+    <input type="text" id="usernameEntry" placeholder="Enter Username..." name="username" required><br>
+    <h3 align ="center">Password: </h3>
+    <input type="text" id="passwordEntry" placeholder="Enter Password..." name="password" required>
+    <script>
+
+    </script>
 </body>
 </html>
