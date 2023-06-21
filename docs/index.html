@@ -45,15 +45,6 @@
         <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a></p>
     </footer>
     <script>
-        // Add an event listener to the password input field to detect Enter key press
-        document.getElementById("passwordEntry").addEventListener("keydown", function(event) {
-            // Check if the Enter key is pressed
-            if (event.key === 'Enter') {
-                event.preventDefault(); // Prevent form submission
-                getInputs();
-            }
-        });
-
         function getInputs() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
@@ -67,17 +58,21 @@
                 console.log("Password input is empty")
             } else if (usernameTry === "") {
                 console.log("Username input is empty")
+
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+
             } else if (usernameTry === "a" && passwordTry === "s") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+
             } else if (usernameTry === "wmailsystem" && passwordTry === "123") {
                 console.log("WMail Launched " + usernameTry)
                 window.location.href = "client.html";
+
             } else {
-                console.log("None Soz")
+                console.log("Username or Password Not Found")
             }
         }
     </script>
