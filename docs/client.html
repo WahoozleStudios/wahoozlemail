@@ -37,7 +37,7 @@
     <h1><b>WAHOOZLE MAIL CLIENT</b></h1>
     <p align="center" id="welcomeMessage"><i></i></p>
     <div id="buttons">
-        <button id="readButton">READ</button>
+        <button id="readButton" onclick=readFunc()>READ</button>
         <button id="sendButton">SEND</button>
         <button id="helpButton">HELP</button>
     </div>
@@ -61,6 +61,7 @@
 
         function readFunc() {
             console.log("Read Button");
+            window.location.href = "client/read.html"
         }
         
         function sendFunc() {
@@ -84,6 +85,7 @@
         var welcomeMessageText = "Hello " + usernameTry + "!";
         var welcomeMessageId = document.getElementById("welcomeMessage");
         welcomeMessageId.textContent = welcomeMessageText;
+
     </script>
 </body>
 </html>
