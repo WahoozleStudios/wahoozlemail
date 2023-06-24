@@ -45,14 +45,22 @@
         <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a></p>
     </footer>
     <script>
+        const usernameTry = localStorage.getItem('usernameTry');
+        const loginCorrect = localStorage.getItem('correctLogin');
+
+        if (usernameTry && loginCorrect === "true") {
+            console.log("User is already logged in");
+            window.location.href = "client.html";
+        }
+
         function getInputs() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
-            console.log(usernameTry)
+            console.log(usernameTry);
 
             var passwordTryId = document.getElementById("passwordEntry");
             var passwordTry = passwordTryId.value;
-            console.log(passwordTry)
+            console.log(passwordTry);
             
             function login(x, y, z){
                 var sendUser = x;
@@ -71,8 +79,8 @@
                 console.log("Username input is empty");
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
                 login("zacmoon@wmail.com", "Zac Moon", true);
-            } else if(usernameTry == "a" && passwordTry == "s"){
-                login("quickaccess","Quick Access",true)
+            } else if (usernameTry === "a" && passwordTry === "s") {
+                login("quickaccess", "Quick Access", true);
             } else {
                 console.log("Username or Password Not Found");
             }
