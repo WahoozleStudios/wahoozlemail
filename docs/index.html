@@ -31,6 +31,10 @@
             display: block;
             margin: 0 auto;
         }
+        #signupButton {
+            display: block;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
@@ -40,11 +44,16 @@
     <h3 align="center">Password: </h3>
     <input type="password" id="passwordEntry" placeholder="Enter Password..." name="password" required>
     <br><button id="loginButton" onclick="getInputs()">Login</button>
+    <br><button id ="signupButton" onclick="signUp()">Sign Up</button>
 
     <footer id="footer">
         <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a> • <a href="faq.html">FAQ</a></p>
     </footer>
     <script>
+        function signUp() {
+            console.log("Sign Up")
+            window.location.href = "signup.html"
+        }
         function getInputs() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
