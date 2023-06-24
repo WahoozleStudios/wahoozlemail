@@ -39,21 +39,13 @@
     <input type="text" id="usernameEntry" placeholder="Enter Username..." name="username" required><br>
     <h3 align="center">Password: </h3>
     <input type="password" id="passwordEntry" placeholder="Enter Password..." name="password" required>
-    <br><button id="loginButton" onclick="getInputs()">Login</button>
+    <br><button id="loginButton" onclick="login()">Login</button>
 
     <footer id="footer">
         <br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a></p>
     </footer>
     <script>
-        const usernameTry = localStorage.getItem('usernameTry');
-        const loginCorrect = localStorage.getItem('correctLogin');
-
-        if (usernameTry && loginCorrect === "true") {
-            console.log("User is already logged in");
-            window.location.href = "client.html";
-        }
-
-        function getInputs() {
+        function login() {
             var usernameTryId = document.getElementById("usernameEntry");
             var usernameTry = usernameTryId.value;
             console.log(usernameTry);
@@ -62,25 +54,20 @@
             var passwordTry = passwordTryId.value;
             console.log(passwordTry);
             
-            function login(x, y, z){
-                var sendUser = x;
-                var sendUserName = y;
-                var logIs = z;
-                localStorage.setItem('usernameTry', sendUser);
-                localStorage.setItem('userFullName', sendUserName);
-                localStorage.setItem('correctLogin', logIs);
-                console.log("WMail Launched " + usernameTry);
-                window.location.href = "client.html";
-            }   
-
             if (passwordTry === "") {
                 console.log("Password input is empty");
             } else if (usernameTry === "") {
                 console.log("Username input is empty");
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
-                login("zacmoon@wmail.com", "Zac Moon", true);
+                localStorage.setItem('isLoggedIn', true);
+                localStorage.setItem('usernameTry', usernameTry);
+                console.log("WMail Launched " + usernameTry);
+                window.location.href = "client.html";
             } else if (usernameTry === "a" && passwordTry === "s") {
-                login("quickaccess", "Quick Access", true);
+                localStorage.setItem('isLoggedIn', true);
+                localStorage.setItem('usernameTry', usernameTry);
+                console.log("WMail Launched " + usernameTry);
+                window.location.href = "client.html";
             } else {
                 console.log("Username or Password Not Found");
             }

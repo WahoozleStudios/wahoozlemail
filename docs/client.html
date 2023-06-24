@@ -49,7 +49,7 @@
             window.location.href = "error.html";
         }
         
-        if (!localStorage.getItem('usernameTry') || localStorage.getItem('correctLogin') !== "true") {
+        if (!localStorage.getItem('isLoggedIn')) {
             console.log("Oops, please login first!");
             window.location.href = "index.html";
         }
