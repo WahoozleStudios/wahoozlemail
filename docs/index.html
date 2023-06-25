@@ -64,15 +64,13 @@
             var passwordTry = passwordTryId.value;
             console.log(passwordTry)
             
-            function login(x, y, z){
+            function login(x, y){
                 var sendUser = x;
                 var sendUserName = y;
-                var logIs = z;
                 localStorage.setItem('usernameTry', sendUser);
                 localStorage.setItem('userFullName', sendUserName);
-                localStorage.setItem('correctLogin', logIs);
                 console.log("WMail Launched " + usernameTry);
-                window.location.href = "client.html";
+                window.location.replace("client.html");
             }   
 
             if (passwordTry === "") {
@@ -80,19 +78,19 @@
             } else if (usernameTry === "") {
                 console.log("Username input is empty");
             } else if (usernameTry === "zacmoon@wmail.com" && passwordTry === "chelmer27") {
-                login("zacmoon@wmail.com", "Zac Moon", true);
+                login("zacmoon@wmail.com", "Zac Moon");
             } else if(usernameTry == "a" && passwordTry == "s"){
-                login("quickaccess","Quick Access",true)
+                login("quickaccess","Quick Access")
             } else if(usernameTry == "oscarpicken@wmail.com"&& passwordTry=="ilovekieran"){
-                login("oscarpicken@wmail.com","Oscar Picken",true)
+                login("oscarpicken@wmail.com","Oscar Picken")
             } else if(passwordTry == "cleomoon@wmail.com"&& passwordTry =="nopass"){
-                login("cleomoon@wmail.com","Cleo Moon",true)
+                login("cleomoon@wmail.com","Cleo Moon")
             } else if(usernameTry=="lulumoon@wmail.com"&&passwordTry=="nopass"){
-                login("lulumoon@wmail.com","Lulu Moon",true)
+                login("lulumoon@wmail.com","Lulu Moon")
             } else if(usernameTry=="alextest@wmail.com"&& passwordTry=='test123'){
-                login("alextest@wmail.com","Alex Test Account",true)
+                login("alextest@wmail.com","Alex Test Account")
             } else if(usernameTry=="testacc@wmail.com"&& passwordTry == "password"){
-                login("testacc@wmail.com","Test Account",true)
+                login("testacc@wmail.com","Test Account")
             } else {
                 console.log("Username or Password Not Found");
             }
