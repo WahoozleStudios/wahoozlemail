@@ -47,7 +47,6 @@
     </footer>
 
     <script>
-        alert("Read and Send still under construction!")
         const usernameTry = localStorage.getItem('usernameTry');
         const fullName = localStorage.getItem('userFullName');
         const loginCorrect = localStorage.getItem('correctLogin');
@@ -60,6 +59,8 @@
             window.location.href = "error.html";
         }
         
+        alert("Read and Send still under construction!")
+
         if (!usernameTry || loginCorrect !== "true") {
             console.log("Oops, please login first!");
             window.location.href = "index.html";
