@@ -38,15 +38,72 @@
     <h1 align="center">Send Message</h1>
     <input type="text" id="recipientEntry" placeholder="Recipient">
     <br><br><input type="text" id="subjectEntry" placeholder="Subject">
-    <br><br><textarea id="bodyEntry"rows="20" cols="40"></textarea>
+    <br><br><textarea id="bodyEntry" rows="20" cols="40"></textarea>
     <br><button id="sendButton">Send</button>
     <br><button id="cancelButton">Cancel</button>
     <div id="footer">
         <p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a> • <a href="faq.html">FAQ</a></p>
     </div>
 
-    <script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
 
+    <script type="module">
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpjh4VZtqImSysOAPQBPbXChjg4fi4XcI",
+            authDomain: "wahoozlemail.firebaseapp.com",
+            databaseURL: "https://wahoozlemail-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "wahoozlemail",
+            storageBucket: "wahoozlemail.appspot.com",
+            messagingSenderId: "349597984164",
+            appId: "1:349597984164:web:2dd166b889931bcfcc8d31",
+            measurementId: "G-0HK2JY9W77"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+
+        // Get a reference to the Firestore database service
+        const firestore = firebase.firestore();
+
+        // Function to generate a random ID
+        function generateRandomId() {
+            return Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
+        }
+
+        function createNewDocument() {
+            // Get input values
+            const recipient = document.getElementById("recipientEntry").value;
+            const subject = document.getElementById("subjectEntry").value;
+            const body = document.getElementById("bodyEntry").value;
+            const usernameTry = localStorage.getItem('usernameTry');
+
+            // Generate a random messageId
+            const messageId = generateRandomId();
+
+            // Create a new document in Firestore
+            firestore.collection("messages").doc(messageId).set({
+                sender: usernameTry, 
+                recipient: recipient,
+                messageId: messageId,
+                subject: subject,
+                body: body,
+                messageRead: false // Set messageRead as false initially
+            })
+            .then(() => {
+                console.log("Document created successfully!");
+                // Clear input fields
+                document.getElementById("recipientEntry").value = "";
+                document.getElementById("subjectEntry").value = "";
+                document.getElementById("bodyEntry").value = "";
+            })
+            .catch((error) => {
+                console.error("Error creating document: ", error);
+            });
+        }
+
+        // Add event listener to the Send button
+        document.getElementById("sendButton").addEventListener("click", createNewDocument);
     </script>
 </body>
 </html>
