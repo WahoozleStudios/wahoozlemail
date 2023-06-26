@@ -16,6 +16,29 @@
 <body>
     <h1 align="center">Your Mail:</h1>
     <div id="yourMail"></div>
-    <script src="read.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+
+    <script type="module">
+        // Initialize Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyDpjh4VZtqImSysOAPQBPbXChjg4fi4XcI",
+            authDomain: "wahoozlemail.firebaseapp.com",
+            databaseURL: "https://wahoozlemail-default-rtdb.europe-west1.firebasedatabase.app",
+            projectId: "wahoozlemail",
+            storageBucket: "wahoozlemail.appspot.com",
+            messagingSenderId: "349597984164",
+            appId: "1:349597984164:web:2dd166b889931bcfcc8d31",
+            measurementId: "G-0HK2JY9W77"
+        };
+        firebase.initializeApp(firebaseConfig);
+
+        const firestore = firebase.firestore();
+
+        window.addEventListener("load", function() {
+            console.log("Page loaded!");
+            const usernameTry = localStorage.getItem('usernameTry');
+        });
+    </script>
 </body>
 </html>
