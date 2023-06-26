@@ -18,7 +18,7 @@
         #buttons {
             text-align: center;
         }
-        #readButton, #sendButton, #helpButton {
+        #readButton, #sendButton, #logoutButton {
             background-color: blue;
             color: white;
             padding: 60px 120px;
@@ -39,7 +39,7 @@
     <div id="buttons">
         <button id="readButton" onclick=readFunc()>READ</button>
         <button id="sendButton">SEND</button>
-        <button id="helpButton">HELP</button>
+        <button id="logoutButton">LOG OUT</button>
     </div>
     
     <footer id="footer">
@@ -69,7 +69,7 @@
             window.location.replace("send.html")
         }
         
-        function helpFunc() {
+        function logoutFunc() {
             console.log("Help Button");
             window.location.href = "help.html";
         }
@@ -80,8 +80,8 @@
         var sendButtonId = document.getElementById("sendButton");
         sendButtonId.onclick = sendFunc;
 
-        var helpButtonId = document.getElementById("helpButton");
-        helpButtonId.onclick = helpFunc;
+        var logouButtontId = document.getElementById("logoutButton");
+        logoutButtonId.onclick = logoutFunc;
 
         var welcomeMessageText = "Hello " +fullName + "!";
         var welcomeMessageId = document.getElementById("welcomeMessage");
