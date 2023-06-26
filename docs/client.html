@@ -71,7 +71,7 @@
         
         function logoutFunc() {
             console.log("Help Button");
-            window.location.href = "help.html";
+            window.location.replace("index.html")
         }
 
         var readButtonId = document.getElementById("readButton");
@@ -80,7 +80,7 @@
         var sendButtonId = document.getElementById("sendButton");
         sendButtonId.onclick = sendFunc;
 
-        var logouButtontId = document.getElementById("logoutButton");
+        var logoutButtonId = document.getElementById("logoutButton");
         logoutButtonId.onclick = logoutFunc;
 
         var welcomeMessageText = "Hello " +fullName + "!";
