@@ -43,11 +43,16 @@
         .mail-body {
             margin-top: 20px;
         }
+        #backButton {
+            width:100%;
+            height:50px;
+        }
     </style>
 </head>
 <body>
     <h1 align="center">Your Mail:</h1>
     <div id="yourMail"></div>
+    <br><br><button id="backButton">Back</button>
     <footer id="footer">
         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><p align="center"><a href="help.html" target="_blank">Help Menu</a> • © Wahoozle Studios 2023 • <a href="https://wahoozlestudios.co.uk" target="_blank">Main Site</a> • <a href="faq.html">FAQ</a></p>
     </footer>
@@ -111,6 +116,10 @@
                           console.log("Error getting documents: ", error);
                       });
         });
+        function back(){
+            window.location.replace("client.html");
+        }
+        document.getElementById("backButton").addEventListener("click",back);
     </script>
 </body>
 </html>
