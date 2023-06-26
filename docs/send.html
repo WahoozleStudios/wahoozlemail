@@ -91,14 +91,14 @@
                 messageRead: false // Set messageRead as false initially
             })
             .then(() => {
-                console.log("Document created successfully!");
+                console.log("Message sent successfully!");
                 // Clear input fields
                 document.getElementById("recipientEntry").value = "";
                 document.getElementById("subjectEntry").value = "";
                 document.getElementById("bodyEntry").value = "";
             })
             .catch((error) => {
-                console.error("Error creating document: ", error);
+                console.error("Error sending message: ", error);
             });
         }
 

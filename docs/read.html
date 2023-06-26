@@ -38,6 +38,50 @@
         window.addEventListener("load", function() {
             console.log("Page loaded!");
             const usernameTry = localStorage.getItem('usernameTry');
+
+            // Get reference to the "messages" collection
+            const messagesRef = firestore.collection("messages");
+
+            // Query for documents with recipient as usernameTry and messageRead as false
+            messagesRef.where("recipient", "==", usernameTry)
+                      .where("messageRead", "==", false)
+                      .get()
+                      .then((querySnapshot) => {
+                          querySnapshot.forEach((doc) => {
+                              const data = doc.data();
+                              const sender = data.sender;
+                              const subject = data.subject;
+                              const body = data.body;
+                              const messageRead = data.messageRead;
+
+                              // Create HTML elements for displaying the mail
+                              const mailContainer = document.getElementById("yourMail");
+                              const mailDiv = document.createElement("div");
+                              const subjectDiv = document.createElement("div");
+                              const senderDiv = document.createElement("div");
+                              const readDiv = document.createElement("div");
+                              const bodyDiv = document.createElement("div");
+
+                              // Apply styling to elements
+                              subjectDiv.style.textDecoration = "underline";
+
+                              // Set content of elements
+                              subjectDiv.textContent = subject;
+                              senderDiv.textContent = `From: ${sender}`;
+                              readDiv.textContent = `Read: ${messageRead}`;
+                              bodyDiv.textContent = body;
+
+                              // Append elements to mail container
+                              mailDiv.appendChild(subjectDiv);
+                              mailDiv.appendChild(senderDiv);
+                              mailDiv.appendChild(readDiv);
+                              mailDiv.appendChild(bodyDiv);
+                              mailContainer.appendChild(mailDiv);
+                          });
+                      })
+                      .catch((error) => {
+                          console.log("Error getting documents: ", error);
+                      });
         });
     </script>
 </body>
