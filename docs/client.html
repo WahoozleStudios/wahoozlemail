@@ -29,7 +29,7 @@
             text-align: center;
         }
         #welcomeMessage {
-            font-size:40px;
+            font-size: 40px;
         }
     </style>
 </head>
@@ -37,7 +37,7 @@
     <h1><b>WAHOOZLE MAIL CLIENT</b></h1>
     <p align="center" id="welcomeMessage"><i></i></p>
     <div id="buttons">
-        <button id="readButton" onclick=readFunc()>READ</button>
+        <button id="readButton">READ</button>
         <button id="sendButton">SEND</button>
         <button id="logoutButton">LOG OUT</button>
     </div>
@@ -58,7 +58,6 @@
             window.location.href = "error.html";
         }
 
-
         function readFunc() {
             console.log("Read Button");
             window.location.replace("read.html");
@@ -66,27 +65,26 @@
         
         function sendFunc() {
             console.log("Send Button");
-            window.location.replace("send.html")
+            window.location.replace("send.html");
         }
         
         function logoutFunc() {
-            console.log("Help Button");
-            window.location.replace("index.html")
+            console.log("Logout Button");
+            window.location.replace("index.html");
         }
 
-        var readButtonId = document.getElementById("readButton");
-        readButtonId.onclick = readFunc;
+        var readButton = document.getElementById("readButton");
+        readButton.onclick = readFunc;
 
-        var sendButtonId = document.getElementById("sendButton");
-        sendButtonId.onclick = sendFunc;
+        var sendButton = document.getElementById("sendButton");
+        sendButton.onclick = sendFunc;
 
-        var logoutButtonId = document.getElementById("logoutButton");
-        logoutButtonId.onclick = logoutFunc;
+        var logoutButton = document.getElementById("logoutButton");
+        logoutButton.onclick = logoutFunc;
 
-        var welcomeMessageText = "Hello " +fullName + "!";
-        var welcomeMessageId = document.getElementById("welcomeMessage");
-        welcomeMessageId.textContent = welcomeMessageText;
-
+        var welcomeMessageText = "Hello " + fullName + "!";
+        var welcomeMessage = document.getElementById("welcomeMessage");
+        welcomeMessage.textContent = welcomeMessageText;
     </script>   
 </body>
 </html>
