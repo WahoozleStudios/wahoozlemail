@@ -91,7 +91,9 @@
                 login("alextest@wmail.com","Alex Test Account")
             } else if(usernameTry=="testacc@wmail.com"&& passwordTry == "password"){
                 login("testacc@wmail.com","Test Account")
-            } else {
+            } else if (usernameTry== "ciocia@wmail.com"&&passwordTry=="brighton"){
+               login("ciocia@wmail.com","Ciocia")
+            }else {
                 console.log("Username or Password Not Found");
             }
         }
